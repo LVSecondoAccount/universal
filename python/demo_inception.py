@@ -11,7 +11,7 @@ from timeit import time
 if sys.version_info[0] >= 3:
     from urllib.request import urlretrieve
 else:
-    from urllib import urlretrieve
+    from urllib.request import urlretrieve
 
 
 from universal_pert import universal_perturbation
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     try:
         opts, args = getopt.getopt(argv,"i:t:",["test_image=","training_path="])
     except getopt.GetoptError:
-        print ('python ' + sys.argv[0] + ' -i <test image> -t <imagenet training path>')
+        print(('python ' + sys.argv[0] + ' -i <test image> -t <imagenet training path>'))
         sys.exit(2)
 
     for opt, arg in opts:
